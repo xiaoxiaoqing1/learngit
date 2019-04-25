@@ -1,23 +1,32 @@
 <?php 
+
 /**
 * 
 */
-class Ha
+class Test
 {
-	static private $n = null;
-	private $arr = null;
-	public function Sum_Solution($n){
-		for ($i=0; $i <=$n ; $i++) { 
-			$i += $i;
-		}
-		$arr = $i-1;
-		return $arr;
+	private $num1;
+	private $num2;
+	public function add($num1,$num2){
+		
+		$dbh = new PDO('mysql:dbname=ceshi;host=127.0.0.1', 'root', 'root');
+		$count = $dbh->exec("insert init a values(null,'$num1','$num2')");
+		print_r($count);die;
 	}
+	public function aadd($num1,$num2){
+		$res = $num1+$num2;
+		
+		print_r($res);
+	}
+	
 }
-$n = "3";
-$ha = new Ha();
-$res = $ha->Sum_Solution($n);
-print_r($res);
+
+$num1 = "3";
+$num2 = "4";
+$test = new Test();
+$test->aadd($num1,$num2);
+
+
 
 
  ?>
