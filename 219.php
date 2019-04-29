@@ -3,22 +3,24 @@
 /**
 * 
 */
-class Begin
+class Test
 {
-	public function find($target,$array){
-		$arrone = $array['1'];
-		$one = array_count_values($arrone);
-		print_r($one);die;
-		foreach ($array as $k1 => $v1) {
-			print_r($v1);
-
-		}
+	public function combine($arr_A,$arr_B){
+		$result = array_merge($arr_A,$arr_B);
+		$res = asort($result);
+		foreach ($result as $key => $val) {
+			    echo "$val\n";
+			}
 	}
+
 }
 
-$begin = new Begin();
-$target = 7;
-$array = array('0'=>'1,2,3,4','1'=>'5,6,7,8','2'=>'9,10,11');
-$begin->find($target,$array);
 
- ?>
+
+$arr_A = array('1','2','9');
+$arr_B = array('6','7','8');
+$test = new Test();
+$res = $test->combine($arr_A,$arr_B);
+
+
+ 
