@@ -1,26 +1,33 @@
 <?php 
-
 /**
 * 
 */
-class Test
+class Begin
 {
-	public function combine($arr_A,$arr_B){
-		$result = array_merge($arr_A,$arr_B);
-		$res = asort($result);
-		foreach ($result as $key => $val) {
-			    echo "$val\n";
+	public $n = null;
+	public function NumberOf1($n){
+		if ($n<10) {
+			$one_num = $n%10;
+		}else{
+			$one_num = $n%10;
+			$two_num = ($n - $one_num)/10;
+			$res = $two_num.$one_num.$two_num.$one_num;
+			for ($i=0; $i <= 2; $i++) { 
+				$three_num = substr($res,"1");
 			}
-	}
+			
+			return 2;
+		}
 
+	}
+	
 }
 
+$n = 10;
+$begin = new Begin();
+$res = $begin->NumberOf1($n);
+print($res);
 
 
-$arr_A = array('1','2','9');
-$arr_B = array('6','7','8');
-$test = new Test();
-$res = $test->combine($arr_A,$arr_B);
 
-
- 
+?>
